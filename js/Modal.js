@@ -269,8 +269,21 @@ export class Modal {
 
    infoWrapper.append(infoButton, infoDescription)
 
+    const closeButton = createElement('button', 'close-button')
+    closeButton.textContent = 'Close';
 
-    modalRight.append(additivesButtons, total__wrapper,infoWrapper);
+
+    closeButton.addEventListener('click', () => {
+      
+      this.container.classList.remove('open');
+      setTimeout(this.modalBox.remove(), 0)
+      this.modalBox.remove()
+
+
+    })
+
+
+    modalRight.append(additivesButtons, total__wrapper,infoWrapper,closeButton);
 
     this.modalBox.append(modalLeft);
     this.modalBox.append(modalRight);

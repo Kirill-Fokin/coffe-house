@@ -513,6 +513,12 @@ body {
 .button-bordered:hover .button__text {
   color: #E1D4C9;
 }
+.close-button {
+  width: 10rem;
+  height: 4rem;
+  background-color: unset;
+  border-radius: 2rem;
+}
 .button-bordered .button__text {
   text-align: left;
   display: -webkit-box;
