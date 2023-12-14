@@ -78,10 +78,23 @@ export class Modal {
 
     
     this.sButton = createElement('h4', 'modal__button');
-    this.sButton.addEventListener('click' , () =>{ 
-    this.sButton.classList.add('active')
-    this.sizePrice = 0;
+     
 
+
+    this.sButton.addEventListener('click' , () =>{ 
+       
+
+      this.lButton.classList.remove('button-active')
+    
+      this.mButton.classList.remove('button-active')
+
+      if ( this.sButton.classList.contains('button-active')) {
+        this.sButton.classList.remove('button-active')
+        this.sizePrice = 0;
+      } else {
+    this.sButton.classList.add('button-active')
+    this.sizePrice = 0;
+      }
     console.log(this.sizePrice )
     this.getTotalPrice()
   })
@@ -89,13 +102,22 @@ export class Modal {
   
    
     this.mButton = createElement('h4', 'modal__button');
-
-
+     
+    
+  
     this.mButton = createElement('h4', 'modal__button');
     this.mButton.addEventListener('click' , () =>{ 
-    this.mButton.classList.add('active')
 
+      this.lButton.classList.remove('button-active')
+    
+      this.sButton.classList.remove('button-active')
+      if ( this.mButton.classList.contains('button-active')) {
+        this.mButton.classList.remove('button-active')
+        this.sizePrice = 0;
+      } else {
+    this.mButton.classList.add('button-active')
     this.sizePrice = this.data.sizes.m.add;
+      }
     console.log(this.sizePrice )
    
     
@@ -112,9 +134,19 @@ export class Modal {
 
     this.lButton = createElement('h4', 'modal__button');
     this.lButton.addEventListener('click' , () =>{ 
-    this.lButton.classList.add('active')
+
+      this.sButton.classList.remove('button-active')
+    
+      this.mButton.classList.remove('button-active')
+
+      if (this.lButton.classList.contains('button-active')) {
+        this.lButton.classList.remove('button-active')
+        this.sizePrice = 0;
+      } else {
+      this.lButton.classList.add('button-active')
 
     this.sizePrice = this.data.sizes.l.add;
+      }
     console.log(this.sizePrice )
     
     this.getTotalPrice()
@@ -157,10 +189,21 @@ export class Modal {
     this.additiveButtonFirst = createElement('div', 'additive__button');
     
     this.additiveButtonFirst.addEventListener('click', () => {
+
+      // this.additiveButtonFirst.classList.remove('button-active')
+      this.additiveButtonSecond.classList.remove('button-active')
+      this.additiveButtonThird.classList.remove('button-active')
+
+
+      if (this.additiveButtonFirst.classList.contains('button-active')) {
+        this.additiveButtonFirst.classList.remove('button-active')
+        this.dobavkaPrice = 0;
+      } else {
+
       this.additiveButtonFirst.classList.add('button-active')
       this.dobavkaPrice = this.data.additives[0].add
       console.log(this.data.additives[0].add)
-      
+      }
       this.getTotalPrice()
     })
 
@@ -196,9 +239,18 @@ export class Modal {
     this.additiveButtonSecond = createElement('div', 'additive__button');
 
     this.additiveButtonSecond.addEventListener('click', () => {
+      this.additiveButtonFirst.classList.remove('button-active')
+      // this.additiveButtonSecond.classList.remove('button-active')
+      this.additiveButtonThird.classList.remove('button-active')
+
+      if (this.additiveButtonSecond.classList.contains('button-active')) {
+        this.additiveButtonSecond.classList.remove('button-active')
+        this.dobavkaPrice = 0;
+      }  else {
       this.additiveButtonSecond.classList.add('button-active')
       this.dobavkaPrice = this.data.additives[1].add
       console.log(this.data.additives[1].add)
+      }
       
       this.getTotalPrice()
     })
@@ -223,9 +275,20 @@ export class Modal {
 
    
     this.additiveButtonThird.addEventListener('click', () => {
+      this.additiveButtonFirst.classList.remove('button-active')
+      this.additiveButtonSecond.classList.remove('button-active')
+      // this.additiveButtonThird.classList.remove('button-active')
+
+      if (this.additiveButtonThird.classList.contains('button-active')) {
+        this.additiveButtonThird.classList.remove('button-active')
+        this.dobavkaPrice = 0;
+      } else {
+
       this.additiveButtonThird.classList.add('button-active')
       this.dobavkaPrice = this.data.additives[2].add
       console.log(this.data.additives[2].add)
+
+      }
 
 
       this.getTotalPrice()

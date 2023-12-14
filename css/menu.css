@@ -408,6 +408,8 @@ body {
           column-gap: 1rem;
 }
 
+
+
 .info-button {
   width: 1.5rem;
   height: 1.5rem;
@@ -491,6 +493,10 @@ body {
 }
 .refresh-button__wrapper {
   margin-top: 2rem;
+}
+.button-active {
+  background-color:#665F55;
+  
 }
 
 .button-bordered {
